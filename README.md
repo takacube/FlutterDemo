@@ -1,16 +1,16 @@
-# flutter_todo
+## Flutter Application Demo
 
-A new Flutter project.
+### BLoC Pattern:
+![image](https://user-images.githubusercontent.com/83538851/214848638-389e1769-13e5-4edf-b6a6-4ece108aade5.png)
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+1. Widget tree
+- Flutter organize UI component with the Unit of Widget.
+![image](https://user-images.githubusercontent.com/83538851/214846902-40eebcc1-5a4c-4237-9496-71005171f6c7.png)
 
-A few resources to get you started if this is your first Flutter project:
+2. BLoC
+- 
+3. Resource
+- 
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
