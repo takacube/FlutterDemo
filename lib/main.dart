@@ -26,7 +26,7 @@ class TodoScreen extends StatelessWidget {
   final List<Todo> _todos;
   const TodoScreen({Key? key, required List<Todo> todos })
       : assert(todos != null),
-        this._todos = todos,
+        _todos = todos,
         super(key: key);
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -38,7 +38,7 @@ class TodoScreen extends StatelessWidget {
         itemBuilder: (context, index) => ListTile(
           title: Text(_todos[index].title),
           onTap: () {
-            //TODOの詳細画面に
+            /*move to Todo description page */
             /*
             Navigator.push(
               context,
@@ -113,33 +113,35 @@ class SelectionButton extends StatelessWidget {
 }
 
 class SelectionScreeen extends StatelessWidget {
+  const SelectionScreeen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) => Scaffold(
     appBar: AppBar(
-      title: Text('Choose')
+      title: const Text('Choose')
     ),
     body: Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: ElevatedButton(
               onPressed: () {
                 //選択肢１というデータとともに元の動画に戻る処理
                 Navigator.pop(context, '選択肢1');
               },
-              child: Text('選択１'),
+              child: const Text('選択１'),
             )
           ),
           Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8.0),
               child: ElevatedButton(
                 onPressed: () {
                   //選択肢2というデータとともに元の動画に戻る処理
                   Navigator.pop(context, '選択肢2');
                 },
-                child: Text('選択2'),
+                child: const Text('選択2'),
               )
           ),
 
