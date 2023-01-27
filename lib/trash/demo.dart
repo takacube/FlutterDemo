@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+/*
 class MyBottun extends StatelessWidget {
   @override
   Widget build(BuildContext context) =>
@@ -26,13 +26,14 @@ class Interface extends StatelessWidget {
     );
   }
 }
-
+*/
 /*
 class MyInheritedWidget extends InheritedWidget {
 
 }
 */
 
+/*
 class CartModel extends Model {
   final _cart = Cart();
 
@@ -45,5 +46,4 @@ class CartModel extends Model {
     notifyListeners();
   }
 }
-
-
+*/

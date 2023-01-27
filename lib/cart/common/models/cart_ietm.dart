@@ -1,4 +1,4 @@
-import 'package:flutter_todo/cartdemo/common/models/product.dart';
+import 'package:flutter_todo/cart/common/models/product.dart';
 
 class CartItem {
   final int count;

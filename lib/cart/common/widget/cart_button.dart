@@ -23,10 +23,10 @@ class CartButton extends StatefulWidget {
 }
 
 class CartButtonState extends State<CartButton>
-  with SingleTickerProviderStateMixin {
-    AnimationController _animationController;
-    Animation<double> _animation;
-    
+    with SingleTickerProviderStateMixin {
+  late AnimationController _animationController;
+  late Animation<double> _animation;
+
     final Tween<Offset> _badgePositionTween = Tween(
       begin: const Offset(-5, 0.9),
       end: const Offset(0.0, 0.0),
@@ -65,19 +65,25 @@ class CartButtonState extends State<CartButton>
         onPressed: widget.onPressed
       );
     }
-    
+
     @override
-    void didUpdateWidget(Cartbutton oldWidget) {
+    void didUpdateWidget(CartButton oldWidget) {
       if (widget.itemCount != oldWidget.itemCount) {
         _animationController.reset();
-        _animationController.reward();
+        _animationController.forward();
       }
       super.didUpdateWidget(oldWidget);
     }
 
     @override
-    void initiate() {
-      super.initState() {
+    void dispose() {
+      _animationController.dispose();
+      super.dispose();
+    }
+
+    @override
+    void initState() {
+      super.initState();
         _animationController = AnimationController(
           duration: const Duration(milliseconds: 500),
           vsync: this,
@@ -85,6 +91,5 @@ class CartButtonState extends State<CartButton>
         _animation =
           CurvedAnimation(parent: _animationController, curve: Curves.elasticOut);
         _animationController.forward();
-      }
     }
   }

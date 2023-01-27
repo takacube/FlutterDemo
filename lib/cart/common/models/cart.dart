@@ -1,7 +1,7 @@
 import 'dart:collection';
 import 'dart:math';
 
-import 'package:flutter_todo/cartdemo/common/models/product.dart';
+import 'package:flutter_todo/cart/common/models/product.dart';
 import 'cart_ietm.dart';
 
 class Cart {

@@ -3,7 +3,7 @@ import 'dart:collection';
 import 'dart:math';
 import 'dart:ui' show Color;
 
-import 'package:flutter_todo/cartdemo/common/models/product.dart';
+import 'package:flutter_todo/cart/common/models/product.dart';
 
 
 /// Hard-coded catalog of [Product]s.
