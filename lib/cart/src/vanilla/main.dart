@@ -6,6 +6,8 @@ import 'package:flutter_todo/cart/common/widget/cart_button.dart';
 import 'package:flutter_todo/cart/common/widget/cart_page.dart';
 import 'package:flutter_todo/cart/common/widget/product_square.dart';
 import 'package:flutter_todo/cart/common/widget/theme.dart';
+import 'package:flutter_todo/cart/common/widget/user_button.dart';
+import 'package:flutter_todo/cart/common/widget/user_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,7 +24,8 @@ class MyApp extends StatelessWidget {
       //home: MyHomePage(cart: cart),
       routes: <String, WidgetBuilder>{
         "/": (context) => MyHomePage(cart: cart),
-        CartPage.routeName: (context) => CartPage(cart),
+        CartPage.routeName: (context) => CartPage(cart: cart),
+        UserPage.routeName: (context) => const UserPage(user: "Takanao"),
       },
     );
   }
@@ -57,7 +60,8 @@ class MyHomePageState extends State<MyHomePage> {
             onPressed: () {
               Navigator.of(context).pushNamed(CartPage.routeName);
             },
-          )
+          ),
+          UserButton(itemCount: 1, onPressed: () => Navigator.of(context).pushNamed(UserPage.routeName))
         ],
       ),
       body: ProductGrid(

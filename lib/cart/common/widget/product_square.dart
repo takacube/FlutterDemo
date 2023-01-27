@@ -6,7 +6,7 @@ class ProductSquare extends StatelessWidget {
   final Product product;
   final GestureTapCallback onTap;
 
-  ProductSquare({Key? key, required this.product, required this.onTap,
+  const ProductSquare({Key? key, required this.product, required this.onTap,
   }) : super(key: key);
 
   @override

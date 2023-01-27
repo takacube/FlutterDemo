@@ -10,23 +10,14 @@ import 'package:flutter_todo/cart/common/models/product.dart';
 /// Hard-coded catalog of [Product]s.
 final Catalog catalog = fetchCatalogSync();
 
-/// Fetches the catalog of products asynchronously.
 Future<Catalog> fetchCatalog() {
-  // This simulates a short delay so that we don't get too cocky about having
-  // this state present from application start (something unlikely to happen
-  // in the real world).
   return Future.delayed(const Duration(milliseconds: 200), fetchCatalogSync);
 }
 
-/// Fetches the catalog synchronously.
-///
-/// This is much less realistic than [fetchCatalog] but acceptable if we want
-/// to focus on some other aspect with our sample.
 Catalog fetchCatalogSync() {
   return Catalog._sample();
 }
 
-/// Updates an existing [catalog] of products asynchronously.
 Future<Null> updateCatalog(Catalog catalog) {
   return Future.delayed(const Duration(milliseconds: 200), () {
     catalog._products.clear();

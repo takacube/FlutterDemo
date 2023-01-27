@@ -6,7 +6,7 @@ class CartButton extends StatefulWidget {
   final Color badgeColor;
   final Color badgeTextColor;
 
-  CartButton({
+  const CartButton({
     Key? key,
     required this.itemCount,
     required this.onPressed,

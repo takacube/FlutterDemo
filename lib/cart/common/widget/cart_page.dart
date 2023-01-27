@@ -5,7 +5,7 @@ import 'package:flutter_todo/cart/common/utils/is_dark.dart';
 
 
 class CartPage extends StatelessWidget {
-  CartPage(this.cart);
+  const CartPage({Key? key, required this.cart}) :super(key: key);
   final Cart cart;
 
   static const routeName = '/cart';
@@ -14,7 +14,7 @@ class CartPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Your Cart")
+        title: const Text("Your Cart")
       ),
       body: cart.items.isEmpty
           ? Center(
@@ -27,7 +27,7 @@ class CartPage extends StatelessWidget {
 }
 
 class ItemTitle extends StatelessWidget {
-  ItemTitle({required this.item});
+  const ItemTitle({Key? key, required this.item}) :super(key: key);
   final CartItem item;
 
   @override
