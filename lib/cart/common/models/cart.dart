@@ -8,7 +8,7 @@ class Cart {
   final List<CartItem> _items = <CartItem>[];
 
   Cart();
-
+  /*
   Cart.clone(Cart cart) {
     _items.addAll(cart._items);
   }
@@ -16,7 +16,7 @@ class Cart {
   Cart.sample(Iterable<Product> products) {
     _items.addAll(products.take(3).map((product) => CartItem(1, product)));
   }
-
+  */
   int get itemCount => _items.fold(0, (sum, el) => sum + el.count);
 
   UnmodifiableListView<CartItem> get items => UnmodifiableListView(_items);

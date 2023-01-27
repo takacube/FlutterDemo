@@ -3,6 +3,7 @@ import 'dart:collection';
 import 'dart:math';
 import 'dart:ui' show Color;
 
+import 'package:flutter/material.dart';
 import 'package:flutter_todo/cart/common/models/product.dart';
 
 
@@ -44,6 +45,7 @@ class Catalog {
     Product(128, "Hoodie",  Color(0xFFABD0F2)),
     Product(321, "Tuxedo",  Color(0xFF8DA0FC)),
     Product(1003, "Shirt",  Color(0xFF1CE8B5)),
+    Product(11, "sample", Colors.black),
   ];
 
   final List<Product> _products;

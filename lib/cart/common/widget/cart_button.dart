@@ -10,11 +10,11 @@ class CartButton extends StatefulWidget {
     Key? key,
     required this.itemCount,
     required this.onPressed,
-    this.badgeColor: Colors.red,
-    this.badgeTextColor: Colors.white,
+    this.badgeColor=Colors.red,
+    this.badgeTextColor=Colors.white,
     }) :  assert(itemCount >= 0),
-          assert(badgeColor != 0),
-          assert(badgeTextColor != null),
+          //assert(badgeColor != 0),
+          //assert(badgeTextColor != null),
           super(key: key);
   @override
   CartButtonState createState() {

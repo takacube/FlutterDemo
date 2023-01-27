@@ -19,8 +19,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Vanilla',
       theme: appTheme,
-      home: MyHomePage(cart: cart),
+      //home: MyHomePage(cart: cart),
       routes: <String, WidgetBuilder>{
+        "/": (context) => MyHomePage(cart: cart),
         CartPage.routeName: (context) => CartPage(cart),
       },
     );
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   final Cart cart;
 
-  MyHomePage({
+  const MyHomePage({
     Key? key,
     required this.cart,
   }) : super(key: key);
