@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -25,13 +27,16 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final cartBloc = CartProvider.of(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Product Catalog'),
+        title: const Text('BloC'),
         actions: <Widget>[
-          ScopedModelDescendant<CartButton>(
-            builder: (context, _, model) => CartButton(
-              itemCount: 0,
+          StreamBuilder<int>(
+            stream: cartBloc.itemCount,
+            initialData: 0,
+            builder: (context, snapshot) => CartButton(
+              itemCount: snapshot.data,
               onPressed: () {
                 Navigator.of(context).pushNamed(CartPage.routeName);
               }
@@ -52,7 +57,9 @@ class ProdcutGrid extends StatelessWidget {
       return ScopedModelDescendant<CartModel>(
         builder: (context, _, model) => productSquare(
           product: product,
-          onTap: () => model.add(product),
+          onTap: () => {
+            CartBloc.addition.add(product);
+          }
         )
       );
     }).toList(),
@@ -80,5 +87,28 @@ class CartPage extends StatelessWidget {
         )
       )
     );
+  }
+}
+
+
+
+class CartBloc {
+  final _cart = Cart();
+
+  Sink<Product> get addition => _additionControler.sink;
+
+  final _additionControler = StreamController<Product>();
+
+  Stream<int> get itemCount => _itemCountSubject.stream;
+
+  final _itemCountSubject = BehaviorSubject<int>();
+
+  CartBloc() {
+    _additionControler.stream.listen(_handle);
+  }
+
+  void _handle(Product product) {
+    _cart.add(product);
+    _itemCountSubject.add(_cart.itemCount);
   }
 }
