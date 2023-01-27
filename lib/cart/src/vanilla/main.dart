@@ -52,7 +52,7 @@ class MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Vanilla'),
+        title: const Text('Vanilla'),
         actions: <Widget>[
           // The shopping cart button in the app bar
           CartButton(
@@ -76,7 +76,7 @@ class ProductGrid extends StatelessWidget {
   final Cart cart;
   final Function(Product) updateProduct;
 
-  ProductGrid({
+  const ProductGrid({
     Key? key,
     required this.cart,
     required this.updateProduct,

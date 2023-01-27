@@ -32,7 +32,7 @@ class UserName extends StatelessWidget {
       : Colors.black
     );
     return Container(
-      color: user.color,
+      color: (user.id % 2 == 0)? const Color.fromARGB(255, 222, 223, 229) : const Color.fromARGB(255, 244, 245, 248),
       //margin: 123,
       child: ListTile(
         title: Text(
